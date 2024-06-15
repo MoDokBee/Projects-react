@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeTodo, editTodo, toggleComplete } from '../features/todo/todoSlice';
 
+
 function Todos() {
   const todos = useSelector((state) => state.todos);
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function Todos() {
   const handleEdit = (id, text) => {
     setIsEditing(id);
     setEditText(text);
-  };
+  };  
 
   const handleSave = (id) => {
     dispatch(editTodo({ id, text: editText }));
